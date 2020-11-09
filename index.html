@@ -7,27 +7,23 @@
   <title>字的顏色</title>
 </head>
 
-<body style="margin:0;padding:0;">
-  <div style="text-align: center;font-size: 80px;line-height: 90px;">
+<body style="margin:0;padding:0;background-color: #F2F2F2;">
+  <div style="text-align: center;line-height: 9rem;">
     <h1>請唸出字的顏色</h1>
-    <h1 id="text_color"></h1>
-    <button style="font-size: 20px;" onclick="location. reload();">下一個</button>
+    <h1 id="text_color" style="font-size: 8rem;"></h1>
+    <button style="font-size: 1.5rem;" onclick="location. reload();">下一個</button>
   </div>
 
   <script type="text/javascript">
     (function () {
-      const color_name_list = ['紅色', '藍色', '黃色', '綠色', '黑色', '白色', '紫色', '橘色', '咖啡色', '粉紅色', '灰色'];
+      const color_name_list = ['紅', '藍', '黃', '綠', '黑', '白', '紫', '橘', '咖啡', '粉紅', '灰'];
       const color_rbg_list = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#000000', '#FFFFFF', '#800080', '#F28500', '#802A2A', '#FFC0CB', '#C0C0C0']
       const random_list = (list) => {
-        console.log(list[Math.floor((Math.random() * list.length))]);
         return list[Math.floor((Math.random() * list.length))];
       };
-      let text_color = random_list(color_rbg_list);
-      if (text_color == bg_color) {
-        text_color = random_list(color_rbg_list);
-      }
+
       document.getElementById('text_color').innerHTML = random_list(color_name_list);
-      document.getElementById('text_color').style.color = text_color;
+      document.getElementById('text_color').style.color = random_list(color_rbg_list);
     })();
   </script>
 </body>
