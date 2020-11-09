@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字的顏色</title>
+</head>
+
+<body style="margin:0;padding:0;">
+  <div id="bg_color" style="text-align: center;font-size: 80px;line-height: 90px;">
+    <h1 id="text_color"></h1>
+    <button style="font-size: 20px;" onclick="location. reload();">下一個</button>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      const color_name_list = ['紅色', '藍色', '黃色', '綠色', '黑色', '白色', '紫色', '橘色', '咖啡色', '粉紅色', '灰色'];
+      const color_rbg_list = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#000000', '#FFFFFF', '#800080', '#F28500', '#802A2A', '#FFC0CB', '#C0C0C0']
+      const random_list = (list) => {
+        console.log(list[Math.floor((Math.random() * list.length))]);
+        return list[Math.floor((Math.random() * list.length))];
+      };
+      let text_color = random_list(color_rbg_list);
+      if (text_color == bg_color) {
+        text_color = random_list(color_rbg_list);
+      }
+      document.getElementById('text_color').innerHTML = random_list(color_name_list);
+      document.getElementById('text_color').style.color = text_color;
+    })();
+  </script>
+</body>
+
+</html>
